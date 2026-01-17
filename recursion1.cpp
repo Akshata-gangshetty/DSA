@@ -1,4 +1,5 @@
-
+                                    
+//sum of n numbers through recursion
 
  /*void pp(int i,int sum){   
     if(i<1){
@@ -14,8 +15,9 @@ int main(){int n;
     pp(n,0);
     return 0;
 }*/ 
-/*#include<bits/stdc++.h>
-using namespace std;             
+
+/*#include<bits/stdc++.h>            //factorial of n number
+using namespace std;                 //
 int sum(int n){
     if (n==0)
         return 1;
@@ -46,8 +48,8 @@ int main(){
 }*/
 #include<bits/stdc++.h>
 using namespace std;
- /*void recur( int i,int arr[],int n){
-    if (i>=n/2) return ;
+ /*void recur( int i,int arr[],int n){         //palindrom 
+    if (i>=n/2) return ;                       //Time complexity O(n/2) 
     swap(arr[i],arr[n-i-1]);
     recur(i+1,arr,n-1);
 
@@ -59,7 +61,7 @@ int main(){
     for(i=0;i<5;i++) cin>>arr[i];
     recur(0,arr,5);
     for(i=0;i<5;i++) cout<<arr[i]<<" ";
-bool pal(int i,int s[],int n){
+bool pal(int i,int s[],int n){                   //palindrom in string 
         if (i>=n/2) return true;
         if (s[i]!=s[n-i-1]) return false;
         return  pal(i+1,s,n-1);
