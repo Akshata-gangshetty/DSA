@@ -17,6 +17,7 @@ class node{
 
 
 };
+// conversion of array into singly linked list
 node* convarrlink(vector<int>&arr){
     node* head=new node(arr[0]);
     node* mover=head;
@@ -29,7 +30,8 @@ node* convarrlink(vector<int>&arr){
     return head;
 
 }
-// /*int lenl(node* head){
+//Length of linkedlist
+// /*int lenl(node* head){              
 //     int cnt=0;
 //     node*temp=head;
 
