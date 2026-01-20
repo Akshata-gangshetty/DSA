@@ -163,34 +163,57 @@ node* convarrlink(vector<int>&arr){
 
 // }
 //Reverse Linked list
-node * reverll( node *head){
-    node *temp=head;
-    node *prev=NULL;
-    while(temp!=NULL){
-        node *front=temp->next;
-        temp->next=prev;
-        prev=temp;
-        temp=front;
+// node * reverll( node *head){
+//     node *temp=head;
+//     node *prev=NULL;
+//     while(temp!=NULL){
+//         node *front=temp->next;
+//         temp->next=prev;
+//         prev=temp;
+//         temp=front;
 
+
+//     }
+//     return prev;
+// }
+ bool palindrom(node *head){
+    node *temp=head;
+    stack<int>st;
+    while(temp!=NULL){
+        st.push(temp->data);
+        temp=temp->next;;
 
     }
-    return prev;
+    temp=head;
+    while(temp!=NULL){
+        
+        if(temp->data!= st.top()){
+            return false;
+        }
+        st.pop();
+
+        temp=temp->next;
+    
+    }
+    return true;
 }
 int main()
 {
-    vector<int>arr={1,2,3,4,5};
+    vector<int>arr={1,2,3,1,1};
     node*head= convarrlink(arr);
     node*temp=head;
-    while(temp){
-            cout<<temp->data<<" ";
-            temp=temp->next;
-        }
-    head=reverll(head);
-    temp=head;
-     while(temp){
-            cout<<temp->data<<" ";
-            temp=temp->next;
-        }
+    // while(temp){
+    //         cout<<temp->data<<" ";
+    //         temp=temp->next;
+    //     }
+    // temp
+    // head=reverll(head);
+    // temp=head;
+    //  while(temp){
+    //         cout<<temp->data<<" ";
+    //         temp=temp->next;
+    //     }
+    cout<<palindrom(head)<<" ";
 
  
 }
