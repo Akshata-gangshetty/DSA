@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uber for Tractors</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Uber for Tractors 🚜</h1>
+  <form id="bookingForm">
+    <input type="text" id="farmerName" placeholder="Your Name" required>
+    <input type="text" id="location" placeholder="Location" required>
+    <input type="text" id="time" placeholder="Time" required>
+    <button type="submit">Book Tractor</button>
+  </form>
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const response = await fetch('http://127.0.0.1:5000/book_tractor', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          farmer_name: document.getElementById('farmerName').value,
+          location: document.getElementById('location').value,
+          time: document.getElementById('time').value
+        })
+      });
+      const data = await response.json();
+      alert('Booking created!');
+    });
+  </script>
+</body>
+</html>

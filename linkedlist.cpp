@@ -164,44 +164,66 @@ node* convarrlink(vector<int>&arr){
 //     free(delnode);   
 
 // }
-//Reverse Linked list
-// node * reverll( node *head){
-//     node *temp=head;
-//     node *prev=NULL;
-//     while(temp!=NULL){
-//         node *front=temp->next;
-//         temp->next=prev;
-//         prev=temp;
-//         temp=front;
+// Reverse Linked list
+node * reverll( node *head){
+    node *temp=head;
+    node *prev=NULL;
+    while(temp!=NULL){
+        node *front=temp->next;
+        temp->next=prev;
+        prev=temp;
+        temp=front;
 
+
+    }
+    return prev;
+}
+//  bool palindrom(node *head){
+//     node *temp=head;
+//     stack<int>st;
+//     while(temp!=NULL){
+//         st.push(temp->data);
+//         temp=temp->next;;
 
 //     }
-//     return prev;
-// }
- bool palindrom(node *head){
-    node *temp=head;
-    stack<int>st;
-    while(temp!=NULL){
-        st.push(temp->data);
-        temp=temp->next;;
-
-    }
-    temp=head;
-    while(temp!=NULL){
+//     temp=head;
+//     while(temp!=NULL){
         
-        if(temp->data!= st.top()){
+//         if(temp->data!= st.top()){
+//             return false;
+//         }
+//         st.pop();
+
+//         temp=temp->next;
+    
+//     }
+//     return true;
+// }
+bool oppalindrom(node *head){
+    node *slow=head;
+    node *fast =head;
+    while(fast->next!=NULL  && fast->next->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+   node* newhead=reverll(slow->next);
+   node *first=head;
+    node *sec=newhead;
+    while(sec!=NULL){
+        if(first->data!=sec->data){
+            reverll(newhead);
             return false;
         }
-        st.pop();
-
-        temp=temp->next;
-    
+        first=first->next;
+        sec=sec->next;
     }
+    reverll(newhead);
     return true;
+
 }
 int main()
 {
-    vector<int>arr={1,2,3,1,1};
+    vector<int>arr={1,2,3,2,1};
     node*head= convarrlink(arr);
     node*temp=head;
     // while(temp){
@@ -215,7 +237,7 @@ int main()
     //         cout<<temp->data<<" ";
     //         temp=temp->next;
     //     }
-    cout<<palindrom(head)<<" ";
+    cout<<oppalindrom(head)<<" ";
 
  
 }
