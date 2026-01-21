@@ -42,6 +42,7 @@ node* convarrlink(vector<int>&arr){
 //     }
 //     return cnt;
 // }
+//searching whether the element exist or not
 // int checkval(node*head,int val){
 //     node*temp=head;
 //      while(temp){
