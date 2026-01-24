@@ -316,7 +316,7 @@ node* convarrlink(vector<int>&arr){
 //     }
 //     return temp;
     
-// }
+// }//tortise and hare concept
 // node *middlenode(node *head){ //  Time complexity =O(n) and spacecomplexity=O(1)
 //     node *slow=head;
 //     node *fast=head;
@@ -327,7 +327,7 @@ node* convarrlink(vector<int>&arr){
 //     }
 //     return slow;
 // }
-
+//tortise and hare concept
 int findlen(node *slow,node *fast){
     int  cnt=1;
     fast=fast->next;
