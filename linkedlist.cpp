@@ -166,19 +166,19 @@ node* convarrlink(vector<int>&arr){
 
 // }
 // Reverse Linked list
-node * reverll( node *head){
-    node *temp=head;
-    node *prev=NULL;
-    while(temp!=NULL){
-        node *front=temp->next;
-        temp->next=prev;
-        prev=temp;
-        temp=front;
+// node * reverll( node *head){
+//     node *temp=head;
+//     node *prev=NULL;
+//     while(temp!=NULL){
+//         node *front=temp->next;
+//         temp->next=prev;
+//         prev=temp;
+//         temp=front;
 
 
-    }
-    return prev;
-}
+//     }
+//     return prev;
+// }
 //  bool palindrom(node *head){
 //     node *temp=head;
 //     stack<int>st;
@@ -200,47 +200,169 @@ node * reverll( node *head){
 //     }
 //     return true;
 // }
-bool oppalindrom(node *head){
-    node *slow=head;
-    node *fast =head;
-    while(fast->next!=NULL  && fast->next->next!=NULL){
-        slow=slow->next;
-        fast=fast->next->next;
-    }
-   node* newhead=reverll(slow->next);
-   node *first=head;
-    node *sec=newhead;
-    while(sec!=NULL){
-        if(first->data!=sec->data){
-            reverll(newhead);
-            return false;
-        }
-        first=first->next;
-        sec=sec->next;
-    }
-    reverll(newhead);
-    return true;
+// bool oppalindrom(node *head){
+//     node *slow=head;
+//     node *fast =head;
+//     while(fast->next!=NULL  && fast->next->next!=NULL){
+//         slow=slow->next;
+//         fast=fast->next->next;
+//     }
+//    node* newhead=reverll(slow->next);
+//    node *first=head;
+//     node *sec=newhead;
+//     while(sec!=NULL){
+//         if(first->data!=sec->data){
+//             reverll(newhead);
+//             return false;
+//         }
+//         first=first->next;
+//         sec=sec->next;
+//     }
+//     reverll(newhead);
+//     return true;
 
-}
-int main()
-{
-    vector<int>arr={1,2,3,2,1};
-    node*head= convarrlink(arr);
-    node*temp=head;
-    // while(temp){
-    //         cout<<temp->data<<" ";
-    //         temp=temp->next;
-    //     }
-    // temp
-    // head=reverll(head);
-    // temp=head;
-    //  while(temp){
-    //         cout<<temp->data<<" ";
-    //         temp=temp->next;
-    //     }
-    cout<<oppalindrom(head)<<" ";
+// }
+// int addhhelper(node *temp){
+
+//     if(temp==NULL){
+//         return  1;
+//     }
+
+//     int carry=addhhelper(temp->next);
+//     temp->data+=carry;
+//     if (temp->data < 10)
+//     {
+//        return 0; /* code */
+//     }
+//     temp->data=0;
+//     return  1;
+    
+// }
+// node *addone(node *head){
+//     int carry=addhhelper(head);
+//     if(carry==1){
+//         node *newhead=new node(1);
+//         newhead->next=head;
+//         head=newhead;
+//     }
+//     return head;
+// }
+// node *findintersection(node *head1,node *head2){
+//     if(head1==NULL || head2 ==NULL){
+//         return NULL;
+//     }
+//     node *temp1=head1;
+//     node *temp2=head2;
+//     while(temp1!=temp2){
+//         temp1=temp1->next;
+//         temp2=temp2->next;
+//         // if(temp1==temp2) return temp1;
+//         if(temp1==NULL) temp1=head2;
+//         if(temp2==NULL) temp2=head1;
+
+//     }
+//     return temp1;
+// }
+
+
+// int main()
+// {
+//     vector<int>arr={9,10,11};
+//     node*head1= convarrlink(arr);
+//     node*temp1=head1;
+//     while(temp1){
+//             cout<<temp1->data<<" ";
+//             temp1=temp1->next;
+//         }
+//     cout<<endl<<" ";
+//      vector<int>arr2={1,2,3,9,10,11};
+//     node*head2= convarrlink(arr2);
+//     node*temp=head2;
+//     while(temp){
+//             cout<<temp->data<<" ";
+//             temp=temp->next;
+//         }
+//     cout<<endl<<" ";
+//     cout<<findintersection(head1,head2)<<" ";
+
+//     // temp=addone(head);
+//     //  while(temp){
+//     //         cout<<temp->data<<" ";
+//     //         temp=temp->next;
+//     //     }
+
+    
 
  
+// }
+// node *midddlenode(node *head){// for odd linked list and eve linked list also as we have to findout second mid
+//     node *temp=head;
+//     int cnt=0;
+//     while(temp!=NULL){   //O(n)
+//         cnt++;
+//         temp=temp->next;
+//     }
+//     int mid=(cnt/2)+1;
+//     temp=head;
+//     while (temp!=NULL)
+//     {
+//        mid=mid-1;
+//        if (mid==0)
+//        {
+//          break;/* O(n/2) */
+//        }
+//        temp=temp->next;
+       
+//     }
+//     return temp;
+    
+// }
+// node *middlenode(node *head){ //  Time complexity =O(n) and spacecomplexity=O(1)
+//     node *slow=head;
+//     node *fast=head;
+//     while(fast!=NULL && fast->next!=NULL){
+//         slow=slow->next;
+//         fast=fast->next->next;
+
+//     }
+//     return slow;
+// }
+
+int findlen(node *slow,node *fast){
+    int  cnt=1;
+    fast=fast->next;
+    while(slow!=fast){
+        cnt++;
+        fast=fast->next;
+    }
+    return cnt;
+}
+int looplen(node * head){
+    node *slow=head;
+    node *fast=head;
+
+    while(fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+        if(slow==fast)return findlen(slow,fast);
+
+    }
+    return 0;
+}
+
+int main(){
+
+    vector<int>arr={1,2,3,4,5,6};
+    node *head=convarrlink(arr);
+    node*temp=head;
+    while(temp){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
+    // node *mid=middlenode(head);
+        // node *llen=looplen(head);
+        cout<<looplen(head)<<" ";
+
 }
 
 
