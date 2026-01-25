@@ -317,7 +317,7 @@ node* convarrlink(vector<int>&arr){
 //     return temp;
     
 // }
-// node *middlenode(node *head){ //  Time complexity =O(n) and spacecomplexity=O(1)
+// node *middlenode(node *head){ //  Time complexity =O(n/2) and spacecomplexity=O(1)
 //     node *slow=head;
 //     node *fast=head;
 //     while(fast!=NULL && fast->next!=NULL){
@@ -337,7 +337,7 @@ int findlen(node *slow,node *fast){
     }
     return cnt;
 }
-int looplen(node * head){
+int looplen(node * head){//time complxity O(n/2) and spacecompllexity O(1) but total willbe O(n) time
     node *slow=head;
     node *fast=head;
 
@@ -349,6 +349,42 @@ int looplen(node * head){
     }
     return 0;
 }
+node *delmidllenode(node *head){//Time complexity O(n/2) and sapce O(1)
+    node *slow=head;
+    node *fast=head;
+    fast=fast->next->next;
+    if(head==NULL || head->next==NULL) return NULL;
+    while(fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    slow->next=slow->next->next;
+    return head;
+
+}
+node *lenloop(node *head){//Time complexity O(n/2) and sapce O(1)
+    node *slow=head;
+    node *fast=head;
+    
+    if(head==NULL || head->next==NULL) return NULL;
+    while(fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+        if(slow==fast){
+            slow=head;
+            while(slow!=fast){
+                slow=slow->next;
+                fast=fast->next;
+
+            }
+            return slow;
+        }
+    }
+    return head;
+    
+    
+
+}
 
 int main(){
 
@@ -359,9 +395,16 @@ int main(){
             cout<<temp->data<<" ";
             temp=temp->next;
         }
-    // node *mid=middlenode(head);
+    
+    
         // node *llen=looplen(head);
-        cout<<looplen(head)<<" ";
+        // cout<<looplen(head)<<" ";
+    // temp=delmidllenode(head);
+    // cout<<endl;
+    // while(temp){
+    //         cout<<temp->data<<" ";
+    //         temp=temp->next;
+    //     }
 
 }
 
