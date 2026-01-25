@@ -317,7 +317,7 @@ node* convarrlink(vector<int>&arr){
 //     return temp;
     
 // }//tortise and hare concept
-// node *middlenode(node *head){ //  Time complexity =O(n) and spacecomplexity=O(1)
+// node *middlenode(node *head){ //  Time complexity =O(n/2) and spacecomplexity=O(1)
 //     node *slow=head;
 //     node *fast=head;
 //     while(fast!=NULL && fast->next!=NULL){
@@ -328,7 +328,7 @@ node* convarrlink(vector<int>&arr){
 //     return slow;
 // }
 //tortise and hare concept
-int findlen(node *slow,node *fast){
+int findlen(node *slow,node *fast){ //total time commplexity is O(n) and space complexity is O(1)
     int  cnt=1;
     fast=fast->next;
     while(slow!=fast){
