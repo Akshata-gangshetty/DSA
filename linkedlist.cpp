@@ -247,7 +247,7 @@ node* convarrlink(vector<int>&arr){
 //     }
 //     return head;
 // }
-// node *findintersection(node *head1,node *head2){
+// node *findintersection(node *head1,node *head2){// Time complexity:O(n)
 //     if(head1==NULL || head2 ==NULL){
 //         return NULL;
 //     }
