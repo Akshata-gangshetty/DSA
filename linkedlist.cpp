@@ -328,66 +328,114 @@ node* convarrlink(vector<int>&arr){
 //     return slow;
 // }
 
-int findlen(node *slow,node *fast){
-    int  cnt=1;
-    fast=fast->next;
-    while(slow!=fast){
+// int findlen(node *slow,node *fast){
+//     int  cnt=1;
+//     fast=fast->next;
+//     while(slow!=fast){
+//         cnt++;
+//         fast=fast->next;
+//     }
+//     return cnt;
+// }
+// int looplen(node * head){//time complxity O(n/2) and spacecompllexity O(1) but total willbe O(n) time
+//     node *slow=head;
+//     node *fast=head;
+
+//     while(fast!=NULL && fast->next!=NULL){
+//         slow=slow->next;
+//         fast=fast->next->next;
+//         if(slow==fast)return findlen(slow,fast);
+
+//     }
+//     return 0;
+// }
+// node *delmidllenode(node *head){//Time complexity O(n/2) and sapce O(1)
+//     node *slow=head;
+//     node *fast=head;
+//     fast=fast->next->next;
+//     if(head==NULL || head->next==NULL) return NULL;
+//     while(fast!=NULL && fast->next!=NULL){
+//         slow=slow->next;
+//         fast=fast->next->next;
+//     }
+//     slow->next=slow->next->next;
+//     return head;
+
+// }
+// node *lenloop(node *head){//Time complexity O(n/2) and sapce O(1)
+//     node *slow=head;
+//     node *fast=head;
+    
+//     if(head==NULL || head->next==NULL) return NULL;
+//     while(fast!=NULL && fast->next!=NULL){
+//         slow=slow->next;
+//         fast=fast->next->next;
+//         if(slow==fast){
+//             slow=head;
+//             while(slow!=fast){
+//                 slow=slow->next;
+//                 fast=fast->next;
+
+//             }
+//             return slow;
+//         }
+//     }
+//     return head;
+    
+    
+    
+
+// }
+
+// int main(){
+
+//     vector<int>arr={1,2,3,4,5,6};
+//     node *head=convarrlink(arr);
+//     node*temp=head;
+//     while(temp){
+//             cout<<temp->data<<" ";
+//             temp=temp->next;
+//         }
+    
+    
+//         // node *llen=looplen(head);
+//         // cout<<looplen(head)<<" ";
+//     // temp=delmidllenode(head);
+//     // cout<<endl;
+    // while(temp){
+    //         cout<<temp->data<<" ";
+    //         temp=temp->next;
+    //     }
+
+// }
+node *findnthnode (node *temp ,int k){
+    int cnt=1;
+    while(temp!=NULL){
+        if(cnt ==k) return temp;
         cnt++;
-        fast=fast->next;
+        temp=temp->next;
     }
-    return cnt;
+    return temp;
 }
-int looplen(node * head){//time complxity O(n/2) and spacecompllexity O(1) but total willbe O(n) time
-    node *slow=head;
-    node *fast=head;
-
-    while(fast!=NULL && fast->next!=NULL){
-        slow=slow->next;
-        fast=fast->next->next;
-        if(slow==fast)return findlen(slow,fast);
-
+node *rotate(node *head,int k){
+    if(head==NULL || k==0)return head;
+    node *tail=head;
+    int len=1;
+    while (tail->next!=NULL)
+    {
+        tail=tail->next;
+        len+=1;
     }
-    return 0;
-}
-node *delmidllenode(node *head){//Time complexity O(n/2) and sapce O(1)
-    node *slow=head;
-    node *fast=head;
-    fast=fast->next->next;
-    if(head==NULL || head->next==NULL) return NULL;
-    while(fast!=NULL && fast->next!=NULL){
-        slow=slow->next;
-        fast=fast->next->next;
-    }
-    slow->next=slow->next->next;
-    return head;
-
-}
-node *lenloop(node *head){//Time complexity O(n/2) and sapce O(1)
-    node *slow=head;
-    node *fast=head;
-    
-    if(head==NULL || head->next==NULL) return NULL;
-    while(fast!=NULL && fast->next!=NULL){
-        slow=slow->next;
-        fast=fast->next->next;
-        if(slow==fast){
-            slow=head;
-            while(slow!=fast){
-                slow=slow->next;
-                fast=fast->next;
-
-            }
-            return slow;
-        }
-    }
+    if(k%len==0)return head;
+    k=k%len;
+    tail->next=head;
+    node *newlastnode=findnthnode(head,len-k);
+    head=newlastnode->next;
+    newlastnode->next=NULL;
     return head;
     
-    
-
 }
-
 int main(){
-
     vector<int>arr={1,2,3,4,5,6};
     node *head=convarrlink(arr);
     node*temp=head;
@@ -395,18 +443,16 @@ int main(){
             cout<<temp->data<<" ";
             temp=temp->next;
         }
-    
-    
-        // node *llen=looplen(head);
-        // cout<<looplen(head)<<" ";
-    // temp=delmidllenode(head);
-    // cout<<endl;
-    // while(temp){
-    //         cout<<temp->data<<" ";
-    //         temp=temp->next;
-    //     }
+    cout<<endl;
+    temp=rotate(head,4);
+    while(temp){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
+
 
 }
+
 
 
 
