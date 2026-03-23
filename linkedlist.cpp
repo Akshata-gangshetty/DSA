@@ -166,7 +166,7 @@ node* convarrlink(vector<int>&arr){
 
 // }
 // Reverse Linked list
-// node * reverll( node *head){
+// node * reverll( node *head){//Time complexity:O(n)
 //     node *temp=head;
 //     node *prev=NULL;
 //     while(temp!=NULL){
