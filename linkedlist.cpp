@@ -148,6 +148,7 @@ node* convarrlink(vector<int>&arr){
    
 // }
 //find n-2 and delete
+//time complexity:O(n) and space complexity:O(1)
 // node delendn(node *head,int k){
 //     node *fast=head;
 //     node *slow=head;
@@ -166,7 +167,7 @@ node* convarrlink(vector<int>&arr){
 
 // }
 // Reverse Linked list
-// node * reverll( node *head){//Time complexity:O(n)
+// node * reverll( node *head){//Time complexity:O(n),space complexity:O(1)
 //     node *temp=head;
 //     node *prev=NULL;
 //     while(temp!=NULL){
