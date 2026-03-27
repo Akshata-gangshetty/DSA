@@ -172,13 +172,37 @@ node* burte(node* head){
      }
      return head;
 }
+node *findtail(node *head){
+    node *temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    return temp;
+}
 
-// node *oddenevenindex(node* head){
-//     node *oddh=head;
-//     node* evenh=head->next;
-//     while(
+
+
+node *removeduplicate(node *head){
+    node *temp=head;
+    while(temp!=NULL && temp->next!=NULL){
+        node* nextnode =temp->next;
+        while (nextnode!=NULL && nextnode->data==temp->data)
+        {
+            node *duplicate=nextnode;
+            nextnode=nextnode->next;
+            free(duplicate);
+        }
+        temp->next=nextnode;
+        if(nextnode!=NULL)nextnode->back=temp;
+        temp=temp->next;
+
+        
+    }
+    return head;
+
+}
 int main(){
-    vector<int>num1={12,3,6,8,4,7,9};
+    vector<int>num1={1,2,2,2,3,4,4,4,5};
     node*head=convertarry(num1);
     // vector<int>num2={12,3,6,8,1,7,9};
     // node*head1=convertarry(num2);
@@ -189,13 +213,17 @@ int main(){
     // print(head);
     // head=removeele(head,6);
     // print(head);
+
     // deletenode(head->next);
     // print(head);
     // 
     // node*head3= additiondll(head,head1);
     // print(head3);
-    head=burte(head);
-    print(head);
+    // head=burte(head);
+    // print(head);
+    cout<<endl;
+    node *temp=removeduplicate(head);
+    print(temp);
     return 0;
     
 }

@@ -1,1 +1,1 @@
- // st.pop()
+if(temp1==temp2) return temp1;
