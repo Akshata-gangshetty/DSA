@@ -148,6 +148,7 @@ node* convarrlink(vector<int>&arr){
    
 // }
 //find n-2 and delete
+//time complexity:O(n) and space complexity:O(1)
 // node delendn(node *head,int k){
 //     node *fast=head;
 //     node *slow=head;
@@ -166,7 +167,7 @@ node* convarrlink(vector<int>&arr){
 
 // }
 // Reverse Linked list
-// node * reverll( node *head){
+// node * reverll( node *head){//Time complexity:O(n),space complexity:O(1)
 //     node *temp=head;
 //     node *prev=NULL;
 //     while(temp!=NULL){
@@ -247,7 +248,7 @@ node* convarrlink(vector<int>&arr){
 //     }
 //     return head;
 // }
-// node *findintersection(node *head1,node *head2){
+// node *findintersection(node *head1,node *head2){// Time complexity:O(n)
 //     if(head1==NULL || head2 ==NULL){
 //         return NULL;
 //     }
@@ -316,7 +317,11 @@ node* convarrlink(vector<int>&arr){
 //     }
 //     return temp;
     
+
 // }
+
+// }//tortise and hare concept
+
 // node *middlenode(node *head){ //  Time complexity =O(n/2) and spacecomplexity=O(1)
 //     node *slow=head;
 //     node *fast=head;
@@ -327,6 +332,7 @@ node* convarrlink(vector<int>&arr){
 //     }
 //     return slow;
 // }
+
 
 // int findlen(node *slow,node *fast){
 //     int  cnt=1;
@@ -412,6 +418,12 @@ node *findnthnode (node *temp ,int k){
     int cnt=1;
     while(temp!=NULL){
         if(cnt ==k) return temp;
+//tortise and hare concept
+int findlen(node *slow,node *fast){ //total time commplexity is O(n) and space complexity is O(1)
+    int  cnt=1;
+    fast=fast->next;
+    while(slow!=fast){
+
         cnt++;
         temp=temp->next;
     }
