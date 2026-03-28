@@ -367,7 +367,7 @@ node* convarrlink(vector<int>&arr){
 //     slow->next=slow->next->next;
 //     return head;
 
-// }
+
 // node *lenloop(node *head){//Time complexity O(n/2) and sapce O(1)
 //     node *slow=head;
 //     node *fast=head;
@@ -414,56 +414,58 @@ node* convarrlink(vector<int>&arr){
     //     }
 
 // }
-node *findnthnode (node *temp ,int k){
-    int cnt=1;
-    while(temp!=NULL){
-        if(cnt ==k) return temp;
-//tortise and hare concept
-int findlen(node *slow,node *fast){ //total time commplexity is O(n) and space complexity is O(1)
-    int  cnt=1;
-    fast=fast->next;
-    while(slow!=fast){
+// node *findnthnode (node *temp ,int k){
+//     int cnt=1;
+//     while(temp!=NULL){
+//         if(cnt ==k) return temp;}
+// //tortise and hare concept
+// int findlen(node *slow,node *fast){ //total time commplexity is O(n) and space complexity is O(1)
+//     int  cnt=1;
+//     fast=fast->next;
+//     while(slow!=fast){
 
-        cnt++;
-        temp=temp->next;
-    }
-    return temp;
-}
-node *rotate(node *head,int k){
-    if(head==NULL || k==0)return head;
-    node *tail=head;
-    int len=1;
-    while (tail->next!=NULL)
-    {
-        tail=tail->next;
-        len+=1;
-    }
-    if(k%len==0)return head;
-    k=k%len;
-    tail->next=head;
-    node *newlastnode=findnthnode(head,len-k);
-    head=newlastnode->next;
-    newlastnode->next=NULL;
-    return head;
+//         cnt++;
+//         temp=temp->next;
+//     }
+//     return temp;
+// }
+// node *rotate(node *head,int k){
+//     if(head==NULL || k==0)return head;
+//     node *tail=head;
+//     int len=1;
+//     while (tail->next!=NULL)
+//     {
+//         tail=tail->next;
+//         len+=1;
+//     }
+//     if(k%len==0)return head;
+//     k=k%len;
+//     tail->next=head;
+//     node *newlastnode=findnthnode(head,len-k);
+//     head=newlastnode->next;
+//     newlastnode->next=NULL;
+//     return head;
     
-}
-int main(){
-    vector<int>arr={1,2,3,4,5,6};
-    node *head=convarrlink(arr);
-    node*temp=head;
-    while(temp){
-            cout<<temp->data<<" ";
-            temp=temp->next;
-        }
-    cout<<endl;
-    temp=rotate(head,4);
-    while(temp){
-            cout<<temp->data<<" ";
-            temp=temp->next;
-        }
+// }
+// int main(){
+//     vector<int>arr={1,2,3,4,5,6};
+//     node *head=convarrlink(arr);
+//     node*temp=head;
+//     while(temp){
+//             cout<<temp->data<<" ";
+//             temp=temp->next;
+//         }
+//     cout<<endl;
+//     temp=rotate(head,4);
+//     while(temp){
+//             cout<<temp->data<<" ";
+//             temp=temp->next;
+//         }
 
 
-}
+//     }
+
+// }
 
 
 
