@@ -1,4 +1,5 @@
- #include<bits/stdc++.h>
+// max consecutive ones ,TC:O(n) and SC:O(1)
+#include<bits/stdc++.h>
  using namespace std;
 int Max_consecutive_ones(vector<int>a,int k){
     int l=0,r=0,len=0,maxlen=0,zero=0;
