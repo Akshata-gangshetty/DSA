@@ -1,3 +1,5 @@
+// fruit basket problem  with help of sliding window
+//TC :O(N) SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 int fruit_basket(vector<int>arr,int k){
