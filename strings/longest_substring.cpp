@@ -1,3 +1,5 @@
+// Longest substring problem
+// TC:O(n) and SCO(1)
 #include<bits/stdc++.h>
 using namespace std;
 int long_substring(string s){
