@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//smallest element TC:O(N) and SC:O(1)
 int smallest_ele(vector<int>arr){
     int i=0;
     int smallest=arr[0];
@@ -13,6 +13,7 @@ int smallest_ele(vector<int>arr){
     }
     return smallest;
 }
+//second smallest TC:O(N) ,SC:O(1)
 int sec_smallest_ele(vector<int>arr){
     int smallest=arr[0];
     int ssmallest=-1;
