@@ -23,6 +23,7 @@ vector<int>find_intersection(vector<int>a,vector<int>b){
     return ans;
     
 }
+
 int main(){
     vector<int>a={1,2,3,4,5,6};
     vector<int>b={2,3,4,5,6};
