@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//remove duplicate from sorted arrays 
+//TC:O(n) and SC:O(1)
 int main(){
     int arr[8]={1,1,1,2,2,3,3,3};
     int i=0;

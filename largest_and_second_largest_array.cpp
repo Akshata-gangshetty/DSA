@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Largest element TC:O(n) and SC:O(1)
 int largest_ele(vector<int>arr){
     int i=0;
     int largest=arr[0];
@@ -13,6 +13,7 @@ int largest_ele(vector<int>arr){
     }
     return largest;
 }
+//second smallest element TC:O(1) and SC:O(1)
 int sec_largest_ele(vector<int>arr){
     int largest=arr[0];
     int slargest=-1;
