@@ -1,6 +1,7 @@
+//intersection of two arrays
 #include<bits/stdc++.h>
 using namespace std;
-//tc:O(n1+n2) and sc:O(1)
+//TC:O(n1+n2) and SC:O(1)
 vector<int>find_intersection(vector<int>a,vector<int>b){
     int i=0;
     int j=0;
