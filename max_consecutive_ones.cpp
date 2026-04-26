@@ -1,3 +1,4 @@
+//TC:O(N) and SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 int max_cons_ones(vector<int>arr){
