@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 //to find element which appeeaar only once
-//tc:O(N) SC:O(N)
+//TC:O(N) and SC:O(N)
 int only_once(vector<int>a){
     int xor1=0;
     for (int i = 0; i <a.size(); i++)
