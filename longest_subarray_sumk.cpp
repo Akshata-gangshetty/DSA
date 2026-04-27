@@ -1,3 +1,5 @@
+//To find longest subarray with sum k
+//TC:O(N x logn) and SC:O(n)
 #include<bits/stdc++.h>
 using namespace std;
 //for positves,negatives and for zero
