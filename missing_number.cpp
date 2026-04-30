@@ -1,3 +1,5 @@
+//To find missing no
+//TC:O(N) and SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 int missing_no(vector<int>a,int n){
