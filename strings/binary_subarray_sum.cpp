@@ -1,3 +1,4 @@
+//TC:O(N) and SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 int binary_subarray_sum(vector<int>arr,int k){
@@ -5,7 +6,7 @@ int binary_subarray_sum(vector<int>arr,int k){
     while (r<arr.size())
     {
        sum+=arr[r];
-       while (sum>k)
+       while (sum>k)// it only increment never decrease or 0 and so max level reach is N so it both loop execute N times
        {
             sum=sum-arr[l];
             l=l+1;
