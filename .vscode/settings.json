@@ -1,8 +1,0 @@
-{
-    "C_Cpp.errorSquiggles": "enabled",
-    "files.associations": {
-        "ostream": "cpp",
-        "random": "cpp"
-    },
-    "git.enabled": true
-}

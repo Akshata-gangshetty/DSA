@@ -13,6 +13,7 @@ int kadane_algo(vector<int>a){
         sum+=a[i];
         if(sum>maxi){
             maxi=sum;
+            // ansstart is index where no start and ansend is where subarraay orindex it stop
             ansstart=start;
             ansend=i;
         }
