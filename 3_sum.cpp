@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+//TC:O(N)+O(NlogN) 
+//SC:O(no of triplets)
 vector<vector<int>>triplet_list(int n,vector<int>nums){
     vector<vector<int>>ans;
     for (int i = 0; i < n; i++)
