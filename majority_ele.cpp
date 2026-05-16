@@ -1,4 +1,4 @@
-
+//TC:O(2N) SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> majority_element(vector<int>a){
