@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//TC:O(N) and SCC:O(1)
 vector<int>findmissingandrepeating(vector<int>a){
     long long n=a.size();
     long long s=0;
