@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+//TC:O(n+m)log(n+m)
+//SC:O(1)
 void swapifGreator(long long arr1[],long long arr2[],int ind1,int ind2){
     if (arr1[ind1]>arr2[ind2])
     {
