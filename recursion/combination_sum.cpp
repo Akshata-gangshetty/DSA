@@ -1,3 +1,5 @@
+//TC :2^n * K
+
 #include<bits/stdc++.h>
 using namespace std;
 void findcombination(int ind ,int target,vector<vector<int>>&ans,vector<int>&ds,vector<int>&arr){
