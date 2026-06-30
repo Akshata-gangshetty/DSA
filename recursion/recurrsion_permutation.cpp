@@ -1,3 +1,5 @@
+//TC:n! * n
+//SC:O(n)+O(n)
 #include<bits/stdc++.h>
 using namespace std;
 void recurpermute(vector<int>&ds,vector<int>&a,vector<vector<int>>&ans,int freq[]){
