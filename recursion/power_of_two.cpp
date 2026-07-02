@@ -1,3 +1,5 @@
+//TC:O(1) and SC:O(1)
+
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
