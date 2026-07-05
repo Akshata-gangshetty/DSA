@@ -1,3 +1,5 @@
+//TC:O(logn) SC:O(1)
+
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
@@ -22,3 +24,5 @@ public:
 
     }
 };
+//OR
+//lower_bound(nums.begin(),nums.end(),n)-nums.begin()
