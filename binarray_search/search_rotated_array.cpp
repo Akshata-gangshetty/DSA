@@ -1,3 +1,5 @@
+//TC: logn in almost case but some case takes O(n/2)
+//SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
