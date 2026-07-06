@@ -1,3 +1,4 @@
+//TC:O(logn) and SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
@@ -8,7 +9,7 @@ public:
         if(lb==nums.end() || *lb!=target){
             return {-1,-1};
         }
-        int first=distance(nums.begin(),lb);
+        int first=distance(nums.begin(),lb);//distance is built in function used to tell difference in between iterators
         int last=distance(nums.begin(),hb)-1;
         return {first,last};
 
