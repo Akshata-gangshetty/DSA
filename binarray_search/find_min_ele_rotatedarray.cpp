@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int n=nums.size();
+        int low=0;
+        int high=n-1;
+        int mid;
+        int ans=INT_MAX;
+        while(low<=high){
+            mid=(low+high)/2;
+            if(nums[low]<nums[high]){
+                ans=min(ans,nums[low]);
+                break;
+            }
+            if(nums[low]<=nums[mid]){
+                ans=min(nums[low],ans);
+                low=mid+1;
+            }
+            else{
+                ans=min(nums[mid],ans);
+                high=mid-1;
+            }
+        }
+        return ans;
+    }
+};
