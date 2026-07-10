@@ -1,3 +1,4 @@
+//TC:O(n) and sc:O(1)
 #include <iostream>
 #include <vector>
 using namespace std;
