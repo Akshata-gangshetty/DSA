@@ -1,3 +1,4 @@
+//TC:O(N) and SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 int maximumCards(vector<int>&nums, int k)
