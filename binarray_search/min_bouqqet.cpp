@@ -1,3 +1,5 @@
+//TC:O(N * log(maxi-mini+1))
+//SC:O(1);
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
