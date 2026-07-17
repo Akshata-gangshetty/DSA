@@ -1,3 +1,4 @@
+//TC:O(N * logn)
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
