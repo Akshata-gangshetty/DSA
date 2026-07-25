@@ -1,3 +1,5 @@
+//TC:O(log(nums1Size+nums2Size))
+//SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
 double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size) {  
