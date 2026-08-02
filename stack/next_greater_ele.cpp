@@ -1,10 +1,12 @@
+//TC:O(m+n) SC:O(n)
 #include<bits/stdc++.h>
 using namespace std;
  class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         int n=nums2.size()-1;
-         int m=nums2.size()-1;
+        int m=nums1.size()-1;
+        
         unordered_map<int,int>nge;
         stack<int>st;
         
@@ -20,7 +22,7 @@ public:
             st.push(num);
         }
         vector<int>res(nums1.size());
-        for(int i=0;i<nums1.size();++i){
+        for(int i=0;i<m;++i){
             res[i]=nge[nums1[i]];
         }
         return res;
