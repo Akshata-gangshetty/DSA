@@ -1,3 +1,4 @@
+//TC :O(4n)  and SC:O(n)+O(n)
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
@@ -7,8 +8,8 @@ public:
         vector<int>nge(n);
         stack<int>st;
 
-        for(int i=2*n-1;i>=0;--i){
-            while(!st.empty() && st.top()<=nums[i%n]){
+        for(int i=2*n-1;i>=0;--i){//O(2n)
+            while(!st.empty() && st.top()<=nums[i%n]){//O(2n)
                 st.pop();
             }
             if(i<n){
