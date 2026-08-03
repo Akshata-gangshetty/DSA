@@ -1,16 +1,15 @@
+//SC:O(n)
+
 #include<bits/stdc++.h>
 using namespace std;
 class MinStack {
     private:
-            stack<pair<int,int>>st;
+            stack<pair<int,int>>st;//encapsulation concept
 public:
 
-    MinStack() {
-        
-      
-    }
+    MinStack() {  }
     
-    void push(int val) {
+    void push(int val) { //push()=O(1)
         if(st.empty()){
             st.push({val,val});}
         else{
@@ -19,16 +18,16 @@ public:
         
     }
     
-    void pop() {
+    void pop() {//pop():O(1)
         st.pop();
     }
     
-    int top() {
+    int top() { //top():O(1)
        return st.top().first;
         
     }
     
-    int getMin() {
+    int getMin() {//getmin():O(1)
         return st.top().second;
     }
 };
