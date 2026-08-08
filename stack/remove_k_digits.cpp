@@ -1,3 +1,4 @@
+//TC:O(3n) SC:O(n)+O(n)
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
