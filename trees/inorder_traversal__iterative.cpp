@@ -1,3 +1,5 @@
+//Tc: O(n)+O(n)=O(2n)=O(n)
+//sc:O(n)
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
