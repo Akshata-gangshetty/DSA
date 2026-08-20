@@ -1,3 +1,4 @@
+//TC:O(n) and SC:O(n) 
 #include<bits/stdc++.h>
 using namespace std;
   struct TreeNode {
@@ -15,8 +16,8 @@ public:
     if(!root) return 0;
         int lh=findmax(root->left,maxi);
         int rh=findmax(root->right,maxi);
-        maxi=max(maxi,lh+rh);
-        return 1+max(lh,rh);
+        maxi=max(maxi,lh+rh);//height of tree
+        return 1+max(lh,rh);//Diameter of tree
     }
     int diameterOfBinaryTree(TreeNode* root) {
         int maxi=0;
