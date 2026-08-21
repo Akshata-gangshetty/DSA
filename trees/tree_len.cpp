@@ -16,8 +16,8 @@ public:
     if(!root) return 0;
         int lh=findmax(root->left,maxi);
         int rh=findmax(root->right,maxi);
-        maxi=max(maxi,lh+rh);//height of tree
-        return 1+max(lh,rh);//Diameter of tree
+        maxi=max(maxi,lh+rh);//Diameter of tree
+        return 1+max(lh,rh);//height of tree
     }
     int diameterOfBinaryTree(TreeNode* root) {
         int maxi=0;
