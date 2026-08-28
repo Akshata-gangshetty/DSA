@@ -1,3 +1,4 @@
+// TC:O(n) and SC:O(h)
 #include<bits/stdc++.h>
 using namespace std;
 
