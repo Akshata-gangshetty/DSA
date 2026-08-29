@@ -1,4 +1,5 @@
-
+//TC:O(n) ans SC:O(h)
+//Used recursive method
 #include<bits/stdc++.h>
 using namespace std;
   struct TreeNode {
