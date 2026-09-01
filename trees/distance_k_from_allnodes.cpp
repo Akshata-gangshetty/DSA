@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
@@ -10,7 +11,7 @@ public:
      TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
   };
-    void markparent(TreeNode* root, unordered_map<TreeNode*, TreeNode*>& parent_track) {
+    void markparent(TreeNode* root, unordered_map<TreeNode*, TreeNode*>& parent_track) {//keeps track of parents root
         queue<TreeNode*> q;
         q.push(root);
 
@@ -33,10 +34,10 @@ public:
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
         unordered_map<TreeNode*, TreeNode*> parent_track;
 
-        // Store parent of every node
+       
         markparent(root, parent_track);
 
-        unordered_map<TreeNode*, bool> visited;
+        unordered_map<TreeNode*, bool> visited;//it check whether node is visited
         queue<TreeNode*> q;
 
         q.push(target);
