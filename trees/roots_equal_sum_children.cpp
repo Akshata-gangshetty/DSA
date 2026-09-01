@@ -1,4 +1,4 @@
-
+//TC:O(n) and SC:O(1)
 #include<bits/stdc++.h>
 using namespace std;
   struct TreeNode {
