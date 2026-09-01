@@ -1,3 +1,4 @@
+//Binary search concept is used
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
