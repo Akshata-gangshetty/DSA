@@ -1,3 +1,5 @@
+//Binary search concept is used to convert sorted array into BST
+//TC:logn 
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
