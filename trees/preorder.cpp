@@ -1,3 +1,6 @@
+// used Recursive method 
+//TC:O(N) 
+//SC:O(h) for balanced tree and O(N) for skewed
 #include<bits/stdc++.h>
 using namespace std;
 
